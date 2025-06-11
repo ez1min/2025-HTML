@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>팩맨</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            font-size: 3rem;
+            padding: 20px 30px 30px;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pac = document.createElement("img");
+            const item = document.createElement("img");
+            let status = true;
+
+            setInterval(() => {
+                pac.src = status ? "./img/packman1.png" : "./img/packman2.png";
+                status = !status;
+            }, 200);
+
+            document.body.appendChild(pac);
+            document.body.appendChild(item);
+            let x = 0, y = 0;
+            const step = 40;
+
+            const move = () => {
+                pac.style.left = `${x * step}px`;
+                pac.style.top = `${y * step}px`;
+            };
+
+            window.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowLeft") {
+                    x -= 1;
+                    pac.style.transform = "scaleX(-1)";
+                }
+                if (event.key === "ArrowRight") {
+                    x += 1;
+                    pac.style.transform = "scaleX(1)";
+                }
+                if (event.key === "ArrowUp") {
+                    y -= 1;
+                    pac.style.transfrom = "rotate(270deg)";
+                }
+                if (event.key === "ArrowDown") {
+                    y += 1;
+                    pac.style.transform = "rotate(90deg)";
+                }
+                console.log(event.key);
+                move();
+            });
+
+            const spawn = () => {
+                item.src = "./img/pngegg.png";
+                item.style.position = "absolute";
+
+                const maxX = Math.floor(window.innerWidth / step) - 1;
+                const maxY = Math.floor(window.innerHeight / step) - 1;
+
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+
+                item.style.left = `${randomX * step}px`;
+                item.style.top = `${randomY * step}px`;
+            }
+
+            spawn();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Excel Viewer</title>
+</head>
+
+<body>
+    <h2>엑셀 파일 업로드</h2>
+    <input type="file" id="excel-file" accept=".xlsx, .xls" />
+
+    <h2>엑셀 내용 미리보기</h2>
+    <div id="excel-data"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        document.getElementById('lotto.xls').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+
+                const html = XLSX.utils.sheet_to_html(worksheet);
+                document.getElementById('excel-data').innerHTML = html;
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
+</body>
+
+</html>

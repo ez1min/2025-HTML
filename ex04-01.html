@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 900px;
+            font-size: 3rem;
+            /*px, % vh, vw*/
+        }
+
+        tr,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        #nav {
+            height: 10%;
+            background-color: aliceblue;
+        }
+
+        #header,
+        #footer {
+            height: 15%;
+            background-color: beige;
+        }
+
+        .main-aside {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!--(tr>td*2)*4-->
+    <!--colgroup>col*2-->
+    <colgroup>
+        <col style="width:70%">
+        </col>
+    </colgroup>
+    <table border="1">
+        <tr id="header">
+            <td colspan="2">header</td>
+        </tr>
+        <tr id="nav">
+            <td colspan="2">nav</td>
+        </tr>
+        <tr id="main-aside">
+            <td>main</td>
+            <td style="background-color: blue;">
+                main
+                <hr />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repellat maxime ab porro. Nisi
+                veritatis voluptate maxime nostrum velit eligendi.
+            </td>
+            <td>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repellat maxime ab porro. Nisi
+                veritatis voluptate maxime nostrum velit eligendi.
+            </td>
+        </tr>
+        <tr id="footer">
+            <td colspan="2" f>footer</td>
+        </tr>
+    </table>
+</body>
+
+</html>

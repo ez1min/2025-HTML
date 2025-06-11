@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력값 출력</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid blue;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const inp = prompt("원하는 값을 입력하세요.");
+
+
+
+
+        const list = `
+        <table>
+          <tr>
+            <td>6x1</td>
+            <td>${inp * 1}</td>
+          </tr>
+          <tr>
+            <td>6x2</td>
+            <td>${inp * 2}</td>
+          </tr>
+          <tr>
+            <td>6x3</td>
+            <td>${inp * 3}</td>
+          </tr>
+          <tr>
+            <td>6x4</td>
+            <td>${inp * 4}</td>
+          </tr>
+          <tr>
+            <td>6x5</td>
+            <td>${inp * 5}</td>
+          </tr>
+          <tr>
+            <td>6x6</td>
+            <td>${inp * 6}</td>
+          </tr>
+          <tr>
+            <td>6x7</td>
+            <td>${inp * 7}</td>
+          </tr>
+          <tr>
+            <td>6x8</td>
+            <td>${inp * 8}</td>
+          </tr>
+          <tr>
+            <td>6x9</td>
+            <td>${inp * 9}</td>
+          </tr>
+        </table>
+      `;
+        document.write(list);
+    </script>
+</body>
+
+</html>

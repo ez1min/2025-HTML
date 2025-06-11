@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        const arr1 = [1, 2, 3, 4, 5];
+        console.log(arr1);
+        const arr2 = arr1.map((v) => v * 11);
+        /* 원본 배열을 훼손하지 않고, 콜백 함수가 리턴한 값들로만 이루어진 새 배열을 돌려줍니다.
+        요소의 값(v)은 무시하고, 그 순서(i)만 리턴하라”는 의미예요. */
+        console.log(arr2);
+        const arr3 = arr1.map((v, i) => i);
+        console.log(arr3);
+    </script>
+</head>
+
+<body></body>
+
+</html>

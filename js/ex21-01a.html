@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="c1 a1">Hello World</div>
+    <div class="c1" id="test1">Lorem, ipsum</div>
+    <div class="c1 a2" id="test2">document 선택</div>
+
+    <script>
+        // ✅ 1. 각각의 요소 선택
+        const ex1_id = document.querySelector("#test1");      // ID로 선택
+        const ex1_class = document.querySelector(".c1.a2");   // 클래스 두 개 동시 선택 (공백 X)
+        const ex1_tag = document.querySelector("div");        // 첫 번째 div 태그 선택
+
+        // ✅ 2. 여러 요소 선택
+        const ex1_classAll = document.querySelectorAll(".c1"); // 유사배열 NodeList
+
+        // ✅ 3. 반복문 가능 (NodeList라서 forEach 가능)
+        ex1_classAll.forEach((v) => console.log("forEach:", v));
+
+        // ✅ 4. 콘솔 확인
+        console.log("querySelector");
+        console.log(1, ex1_id);      // #test1
+        console.log(1, ex1_class);   // .c1.a2
+        console.log(1, ex1_tag);     // <div>
+        console.log(1, ex1_classAll); // NodeList(3)
+
+        console.log("getElement (비교용)");
+        console.log(2, document.getElementById("test1"));
+        console.log(2, document.getElementsByClassName("c1")); // HTMLCollection
+        console.log(2, document.getElementsByTagName("div"));  // HTMLCollection
+
+    </script>
+</body>
+
+</html>
