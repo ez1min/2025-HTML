@@ -28,7 +28,7 @@ HTML·CSS 기본만으로는 부족해서, **JS로 웹을 제어**해보려고 �
 * ex14-01\~04: `onclick` vs `addEventListener`로 클릭·키보드·마우스 이벤트 걸었음
 * ex15-01\~04: `setTimeout`, `setInterval`로 카운트다운·시계 구현
 * ex16-01\~04: `window.location`, `history`, `navigator` 등 BOM 사용, 팝업 창 열고 닫음 
-* ex17-01\~04: 폼 검증 스크립트로 정규식 패턴, `required` 속성 처리했
+* ex17-01\~04: 폼 검증 스크립트로 정규식 패턴, `required` 속성 처리
 * ex18-01\~04: `XMLHttpRequest`로 AJAX 요청, JSON 파싱 후 DOM 업데이트
 * ex19-01\~04: Canvas API로 도형 그리기, 이미지 렌더링, 간단한 애니메이션 적용
 * ex20-01\~03: ES6 `export`/`import`로 모듈 분리
